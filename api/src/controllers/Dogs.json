@@ -1,0 +1,20 @@
+[
+    {
+        "peso": {"imperial": "6 - 13", "metric": "3 - 6"},
+        "altura": {"imperial": "6 - 13", "metric": "3 - 6"},
+        "id" : 1,
+        "name" : "Affenpinscher",
+        "life_span" : "10 - 12 years",
+        "temperament" : "Stubborn, Curious",
+        "image" : "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg"
+    },
+    {
+        "peso": {"imperial": "6 - 13", "metric": "3 - 6"},
+        "altura": {"imperial": "6 - 13", "metric": "3 - 6"},
+        "id" : 2,
+        "name" : "Afghan Hound",
+        "life_span" : "10 - 13 years",
+        "temperament" : "Stubborn, Curious",
+        "image" : "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg"
+    }
+]
