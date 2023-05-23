@@ -2,6 +2,7 @@ const {
     getAllDogs,
     searchByName,
     DogByID,
+    createDog,
 } = require('../controllers/dogController')
 
 
@@ -33,9 +34,12 @@ const get_DogsbyId_Handler = async (req, res) => {
     }
 }
 
-const post_Dogs_Handler = (req, res) => {
+const post_Dogs_Handler = async (req, res) => {
+    const { image, name, height, weight, lifeSpan, temperaments } = req.body
+
     try{
-        res.send('post_Dogs_Handler')
+        const newDog = await createDog(image, name, height, weight, lifeSpan, temperaments)
+        res.status(200).json(newDog)
     } catch (error) {
         res.status(400).json('Error post_Dogs_Handler')
     }

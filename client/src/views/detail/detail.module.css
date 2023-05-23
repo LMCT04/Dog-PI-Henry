@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+.detailContainer{
+    background-image: url('../../components/images/screen-0.webp');
+    background-size: cover;
+    height: 89.5vh;
+    display: flex;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    position: relative;
+    font-family: 'Roboto Mono', monospace;
+    color: #C0A464;
+    font-size: 20px;
+}
+
+.container{
+    border: 4px solid #C0A464;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 150px;
+    justify-content: center;
+    height: 500PX;
+    width: 1285px;
+    background-color: #795C5F;
+    opacity: 0.9;
+}
+
+.container:hover{
+    box-shadow: 3px 3px 10px black;
+}
+
+.imgContainer{
+    border: 4px solid #C0A464;
+    width: 450px;
+    height: 400px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.image{
+    width: 450px;
+    height: 400px;
+}
+
+.contentContainer{
+    border: 4px solid #C0A464;
+    width: 500px;
+    height: 400px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: justify;
+    border-radius: 10px;
+    background-color: #F2E29F;
+}
+
+.content{
+    border: 4px solid #C0A464;
+    margin: 5px;
+    margin-top: 12px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #C0A464;
+    border-radius: 10px;
+}
+
+.label{
+    margin-left: 5px;
+    color: #795C5F;
+}
+
+.h2{
+    margin-left: 5px;
+    color: #795C5F;
+    font-size: 20px;
+}

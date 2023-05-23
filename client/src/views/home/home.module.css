@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+.homeContainer{
+    background-image: url('../../components/images/Fondo_HomePage.jpg');
+    background-size: cover;
+    height: 89.5vh;
+    display: flex;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    position: relative;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.epigraph{
+    font-weight: bold;
+    color: #795C5F;
+}

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+.formContainer{
+    background-image: url('../../components/images/screen-0.webp');
+    background-size: cover;
+    height: 89.5vh;
+    display: flex;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    position: relative;
+    font-family: 'Roboto Mono', monospace;
+    color: #C0A464;
+    font-size: 20px;
+}
+
+.container{
+    margin-top: 50px;
+    border: 5px solid #C0A464;
+    width: 600px;
+    height: 680px;
+    background-image: url('../../components/images/dog-with-glasses-wallpaper.webp');
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.container:hover{
+    box-shadow: 3px 3px 10px black;
+}
+
+.contentContainer{
+    border: 3px solid #C0A464;
+    margin: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 15px;
+    background-color: #795C5F;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.buttonContainer{
+    margin: 50px;
+    text-align: center;
+}
+
+.button{
+    background-color: #FADF7F;
+    font-family: 'Roboto Mono', monospace;
+    padding: 10px;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #C0A464;
+    border-style: double;
+    border-color: #C0A464;
+    transition: transform 0.3s ease;
+}
+
+.button:hover{
+    background-color: #795C5F;
+    border-color: #795C5F;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    color: #F2E29F;
+    box-shadow: 3px 3px 10px black;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.input{
+    background-color: #C0A464;
+    border-style: none;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #F2E29F;
+    text-align: center;
+}

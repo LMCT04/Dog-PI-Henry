@@ -100,10 +100,25 @@ const DogByID = async (id, source) => {
     return cleanDog
 }
 
+const createDog = async (image, name, height, weight, lifeSpan, temperaments) => {
+
+    const newDog = await Dog.create({image, name, height, weight, lifeSpan})
+    const temperamentsDB = await Temperaments.findAll({
+        where: {
+            name: temperaments
+        }
+    })
+
+    newDog.addTemperament(temperamentsDB)
+    return newDog
+}
+
 //console.log(getAllDogs())
 
 module.exports = {
     getAllDogs,
     searchByName,
     DogByID,
+    createDog,
+    getAPIinfo
 }

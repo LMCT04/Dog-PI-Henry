@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+.landingContainer{
+    background-image: url('../../components//images/Fondo_LandingPage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.titleContainer{
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    position: absolute;
+}
+
+.title{
+    font-size: 50px;
+    border: 5px double black;
+    color: black;
+    padding: 20px;
+}
+
+
+.buttonContainer{
+    text-align: center;
+}
+
+.button{
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    border-width: 4px;
+    border-color: white;
+    color: white;
+    background-color: transparent;
+    border-style:solid;
+    width: 100px; /* Ancho fijo */
+    height: 40px; /* Altura fija */
+    transition: all 0.3s ease; /* Animación de transición */
+    margin-top: 210px;
+    opacity: 0.5;
+}
+
+.button:hover {
+    background-color: transparent;
+    width: 120px; /* Aumenta el ancho */
+    height: 50px; /* Aumenta la altura */
+    font-size: 20px; /* Aumenta el tamaño de fuente */
+    opacity: 1;
+    box-shadow: 3px 3px 10px black;
+}

@@ -1,6 +1,12 @@
-const get_AllTemperaments_Handler = (req, res) => {
+const {
+    getAllTemps
+} = require('../controllers/tempController')
+
+
+const get_AllTemperaments_Handler = async (req, res) => {
     try{
-        res.send('get_AllTemperaments_Handler')
+        const result = await getAllTemps()
+        res.status(200).send(result)
     } catch (error) {
         res.status(400).json('Error get_AllTemperaments_Handler')
     }
