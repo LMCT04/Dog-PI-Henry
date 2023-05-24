@@ -44,7 +44,8 @@ const Detail = () => {
                         <label className={style.label} > Life Span: {dog.lifeSpan} </label>
                     </div>
                     <div className={style.content} >
-                        <label className={style.label} > Temperaments: {dog.temperament} </label>
+                        <label className={style.label} > Temperaments: </label>
+                        <label className={style.label2} > {dog.temperaments} </label>
                     </div>
                 </div>
             </div>

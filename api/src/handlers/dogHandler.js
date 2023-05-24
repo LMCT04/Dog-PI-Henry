@@ -24,7 +24,7 @@ const get_DogsbyId_Handler = async (req, res) => {
     const { id } = req.params
     const source = 
         isNaN(id)
-        ? 'bdd'
+        ? 'db'
         : 'api'
     try{
         const result = await DogByID(id, source)

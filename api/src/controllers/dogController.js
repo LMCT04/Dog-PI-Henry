@@ -11,21 +11,23 @@ const cleanArr = (arr) =>
             height: dogs.height.metric,
             weight: dogs.weight.metric,
             lifeSpan: dogs.life_span,
-            temperaments: dogs.temperaments?.map(obj => obj.name).join(', '),
+            temperaments: dogs.temperament,
             created: false,
         }
     })
 
 const getDBinfo = async () => {
     const database = await Dog.findAll({
-        include: [{
+        include: {
             model: Temperaments,
             attributes: ['name'],
             through: {
                 attributes: []
             }
-        }]
+        }
     })
+
+
     return database
 }
 
@@ -45,22 +47,49 @@ const getAllDogs = async () => {
 //----------------------------------------------------------------------------------
 
 const searchByName = async (name) => {
-    const DBdogs = await Dog.findAll({
-        where: {
-            name: name,
+    const razaDogs = await Dog.findAll({
+        include: [{
+            model: Temperaments,
+            attributes: ['name'],
+            through: {
+                attributes: []
+            }
+        }]
+    });
+
+    const cleanDogs = razaDogs.map((dogs) => {
+        return {
+            id: dogs.id,
+            image: dogs.image.url,
+            name: dogs.name,
+            height: dogs.height.metric,
+            weight: dogs.weight.metric,
+            lifeSpan: dogs.life_span,
+            temperaments: dogs.temperaments?.map(obj => obj.name).join(', '),
+        }
+    });
+    const razas = await axios.get('https://api.thedogapi.com/v1/breeds')
+    const razasOnly = razas.data.map(dogs => {
+        return {
+            id: dogs.id,
+            image: dogs.image.url,
+            name: dogs.name,
+            height: dogs.height.metric,
+            weight: dogs.weight.metric,
+            lifeSpan: dogs.life_span,
+            temperaments: dogs.temperaments,
         }
     })
-    const APIdogs = await axios.get(
-        `https://api.thedogapi.com/v1/breeds/search?q=${name}`
-    )
-    const APIinfo2 = cleanArr(APIdogs)
-    return [...DBdogs, ...APIinfo2]
+
+    const response = [...cleanDogs, ...razasOnly];
+    const responseClean = response.filter((dog) => dog.name.toLowerCase().includes(name.toLowerCase()));
+    return responseClean
 }
 
 //----------------------------------------------------------------------------------
 
 const DogByID = async (id, source) => {
-    if(source === 'api') {
+    if (source === 'api') {
         const url = await axios.get('https://api.thedogapi.com/v1/breeds')
         const dog = url.data.find((d) => d.id == id)
         const cleanArr1 = {
@@ -70,7 +99,7 @@ const DogByID = async (id, source) => {
             height: dog.height.metric,
             weight: dog.weight.metric,
             lifeSpan: dog.life_span,
-            temperaments: dog.temperaments,
+            temperaments: dog.temperament,
             created: false,
         }
         return cleanArr1
@@ -86,6 +115,8 @@ const DogByID = async (id, source) => {
         }]
     })
 
+    const temperaments = Dogs.Temperaments.map(obj => obj.name).join(', ')
+
     const cleanDog = {
         id: Dogs.id,
         image: Dogs.image.url,
@@ -93,27 +124,47 @@ const DogByID = async (id, source) => {
         height: Dogs.height.metric,
         weight: Dogs.weight.metric,
         lifeSpan: Dogs.life_span,
-        temperaments: Dogs.temperaments?.map(obj => obj.name).join(', '),
+        temperaments: temperaments,
         created: false,
     }
 
     return cleanDog
 }
 
+//---------------------------------------------------------------------------------- Temperaments     temperamnents     temperament
+
 const createDog = async (image, name, height, weight, lifeSpan, temperaments) => {
 
+        const response = await getAllDogs()
+        const verificarName = response.filter((dog) => dog.name.toLowerCase() === name.toLowerCase());
+        if (verificarName.length !== 0) return res.status(400).json({ error: "Ya exite la raza" });
+
+        const dog = await Dog.create({ name, height, weight, lifeSpan, image });
+
+        let temperamentfromDB = await Temperaments.findAll({
+            where: {
+                name: temperaments
+            }
+        })
+
+        dog.addTemperaments(temperamentfromDB);
+        return dog
+
+
+        
+    /*console.log(temperaments)
     const newDog = await Dog.create({image, name, height, weight, lifeSpan})
-    const temperamentsDB = await Temperaments.findAll({
+
+    let temperamentfromDB = await Temperaments.findAll({
         where: {
             name: temperaments
         }
     })
+    await newDog.addTemperaments(temperamentfromDB)
 
-    newDog.addTemperament(temperamentsDB)
-    return newDog
+    return newDog*/
 }
 
-//console.log(getAllDogs())
 
 module.exports = {
     getAllDogs,

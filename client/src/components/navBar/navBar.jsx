@@ -1,6 +1,7 @@
 import style from './navBar.module.css'
 import { Link } from "react-router-dom"
 import iconImage from '../images/icono_Landing.jpeg'
+import SearchBar from '../searchBar/searchBar'
 
 
 const NavBar = () => {
@@ -19,6 +20,7 @@ const NavBar = () => {
                     <button className={style.button} > FORM </button>
                 </div>
             </Link>
+            <SearchBar/>
         </div>
     )
 }

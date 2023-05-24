@@ -4,11 +4,11 @@
     flex-direction: row;
     border-radius: 15px;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 1em;
     margin: 10px;
-    margin-left: 150px;
-    margin-right: 150px;
-    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content:center;
     width: 1500px;
     
 }

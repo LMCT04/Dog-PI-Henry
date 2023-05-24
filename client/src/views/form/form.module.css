@@ -8,12 +8,12 @@
     display: flex;
     background-repeat: no-repeat;
     flex-direction: column;
-    /*justify-content: center;*/
     align-items: center;
     position: relative;
     font-family: 'Roboto Mono', monospace;
     color: #C0A464;
     font-size: 20px;
+    justify-content: center;
 }
 
 .container{
@@ -24,6 +24,7 @@
     background-image: url('../../components/images/dog-with-glasses-wallpaper.webp');
     background-size: cover;
     border-radius: 15px;
+    position: relative;
 }
 
 .container:hover{
@@ -32,20 +33,20 @@
 
 .contentContainer{
     border: 3px solid #C0A464;
-    margin: 40px;
+    margin-top: 30px;
+    margin-bottom: 0px;
     margin-left: 80px;
     margin-right: 80px;
     border-radius: 15px;
     background-color: #795C5F;
     font-weight: bold;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    text-indent: 10px;
     opacity: 0.9;
 }
 
 .buttonContainer{
-    margin: 50px;
+    margin: 10px;
     text-align: center;
 }
 
@@ -82,5 +83,15 @@
     border-radius: 8px;
     margin-bottom: 8px;
     color: #F2E29F;
-    text-align: center;
+    text-align: justify;
+    width: 240px;
 }
+
+.span{
+    margin-left: 100px;
+    background-color: red;
+    font-size: 10px;
+    border: 2px solid #C0A464;
+    color: #F2E29F;
+}
+

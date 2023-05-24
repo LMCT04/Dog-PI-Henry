@@ -22,11 +22,10 @@
     flex-direction: row;
     border-radius: 15px;
     flex-wrap: wrap;
-    gap: 0.5em;
     margin: 150px;
     justify-content: center;
     height: 500PX;
-    width: 1285px;
+    width: 1500px;
     background-color: #795C5F;
     opacity: 0.9;
 }
@@ -37,25 +36,25 @@
 
 .imgContainer{
     border: 4px solid #C0A464;
-    width: 450px;
+    width: 550px;
     height: 400px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 0px;
+    margin-right: 10px;
     margin-top: 60px;
     margin-bottom: 60px;
 }
 
 .image{
-    width: 450px;
+    width: 550px;
     height: 400px;
 }
 
 .contentContainer{
     border: 4px solid #C0A464;
-    width: 500px;
+    width: 800px;
     height: 400px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-top: 60px;
     margin-bottom: 60px;
     text-align: justify;
@@ -66,7 +65,7 @@
 .content{
     border: 4px solid #C0A464;
     margin: 5px;
-    margin-top: 12px;
+    margin-top: 24px;
     height: 30px;
     font-size: 20px;
     background-color: #C0A464;
@@ -78,8 +77,8 @@
     color: #795C5F;
 }
 
-.h2{
-    margin-left: 5px;
+.label2{
     color: #795C5F;
-    font-size: 20px;
+    font-size: 16px;
+    
 }

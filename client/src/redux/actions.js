@@ -44,7 +44,7 @@ export const getTemperaments = () => {
     return async function (dispatch) {
         try {
             const apiData = await axios.get(`${URL}/temperament`)
-            const temperaments = apiData.data
+            const temperaments = apiData.data.map(temp => temp.name);
             dispatch ({
                 type: GET_TEMPERAMENTS,
                 payload: temperaments,

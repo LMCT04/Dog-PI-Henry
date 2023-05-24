@@ -6,7 +6,7 @@ const Card = (props) => {
         <Link className={style.link} to={`/detail/${props.id}`} >
             <div className={style.card} >
                 <div className={style.imgContainer} >
-                    <img src={props.image} alt='Not found' width='220px' height='200px' ></img>
+                    <img src={props.image} alt='Not found' width='250px' height='200px' ></img>
                 </div>
                 <div className={style.contentContainer} >
                     <p className={style.text} > Breed: </p>
