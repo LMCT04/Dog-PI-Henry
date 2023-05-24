@@ -12,3 +12,26 @@
     width: 1500px;
     
 }
+
+.filter {
+    font-weight: 700;
+    justify-content: space-around;
+    background:#F2E29F; 
+    flex-direction: row;
+    padding: 8px 13px;
+    border-radius: 15px;
+    color: #C0A464;
+    border: none;  
+    box-shadow: 3px 3px 10px black; 
+    margin-left: 10px; 
+    margin-right: 10px;
+    margin-top: 10px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.filter:hover {
+    background: #795C5F;
+    color: #F2E29F;
+    transform: translateY(-5px);
+    font-family: 'Roboto Mono', monospace;
+}

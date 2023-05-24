@@ -7,6 +7,9 @@ export const GET_DETAIL_DOG = 'GET_DETAIL_DOG'
 export const CLEAR_DETAIL = 'CLEAR_DETAIL'
 export const GET_TEMPERAMENTS = 'GET_TEMPERAMENTS'
 export const GET_DOG_BY_NAME = 'GET_DOG_BY_NAME'
+export const FILTER_CREATED = 'FILTER_CREATED'
+export const ORDER_BY_NAME = 'ORDER_BY_NAME'
+export const FILTER_TEMPERAMENT = 'FILTER_TEMPERAMENT'
 
 const URL = 'http://localhost:3001'
 //------------------------------------------------------------
@@ -73,6 +76,26 @@ export const getDogbyName = (name) => {
 export const clearDetail = () => {
     return {
         type: CLEAR_DETAIL,
+    }
+}
+
+export const filterCreated = (payload) => {
+    return {
+        type: FILTER_CREATED,
+        payload,
+    }
+}
+
+export const ordeByName = (payload) => {
+    return {
+        type: ORDER_BY_NAME,
+        payload,
+    }
+}
+
+export const filterTemperaments = (payload) => {
+    return {
+        type: FILTER_TEMPERAMENT, payload
     }
 }
 

@@ -16,6 +16,7 @@ const cleanArr = (arr) =>
         }
     })
 
+
 const getDBinfo = async () => {
     const database = await Dog.findAll({
         include: {
@@ -89,7 +90,38 @@ const searchByName = async (name) => {
 //----------------------------------------------------------------------------------
 
 const DogByID = async (id, source) => {
-    if (source === 'api') {
+
+
+    /*const dog = source === "api"
+    ? (await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`)).data
+    : await Dog.findByPk(id)
+    return dog*/
+
+
+    console.log(id)
+    console.log(source)
+    if(source === 'db'){
+        const Dogs = await Dog.findByPk(id)
+        return Dogs
+    }
+    if(source==='api') {
+        const url = await axios.get('https://api.thedogapi.com/v1/breeds')
+        const dog = url.data.find((d) => d.id == id)
+        const cleanArr1 = {
+            id: dog.id,
+            image: dog.image.url,
+            name: dog.name,
+            height: dog.height.metric,
+            weight: dog.weight.metric,
+            lifeSpan: dog.life_span,
+            temperaments: dog.temperament,
+            created: false,
+        }
+        return cleanArr1
+    }
+
+
+    /*if (source === 'api') {
         const url = await axios.get('https://api.thedogapi.com/v1/breeds')
         const dog = url.data.find((d) => d.id == id)
         const cleanArr1 = {
@@ -128,7 +160,7 @@ const DogByID = async (id, source) => {
         created: false,
     }
 
-    return cleanDog
+    return cleanDog*/
 }
 
 //---------------------------------------------------------------------------------- Temperaments     temperamnents     temperament

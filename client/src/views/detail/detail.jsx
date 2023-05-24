@@ -11,6 +11,7 @@ const Detail = () => {
     const dispatch = useDispatch()
     const dog = useSelector(state => state.detail)
 
+    
     useEffect(() => {
         dispatch(clearDetail())
         dispatch(getDetailDog(id))

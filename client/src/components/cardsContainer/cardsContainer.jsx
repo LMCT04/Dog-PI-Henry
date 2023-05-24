@@ -1,47 +1,58 @@
 import Card from '../card/card.jsx';
 import style from './cardsContainer.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Paginated from '../paginated/paginated.jsx';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { filterCreated, ordeByName } from "../../redux/actions.js"
 
 const CardsContainer = () => {
   const allDogs = useSelector(state => state.dogs);
-  const [dogs, setDogs] = useState(allDogs);
-  const [searchTerm, setSearchTerm] = useState('');
+  const dispatch = useDispatch()
   const [page, setPage] = useState(1);
   const showPerPage = 10;
   const lastOnPage = page * showPerPage;
   const firstOnPage = lastOnPage - showPerPage;
-  const showDogs = dogs.slice(firstOnPage, lastOnPage);
+  const showDogs = allDogs.slice(firstOnPage, lastOnPage);
 
-  const handleChange = event => {
-    setSearchTerm(event.target.value);
-    setPage(1); // Reinicia la página a 1 cuando se realiza una nueva búsqueda
-  };
-
-  useEffect(() => {
-    // Filtra los perros en función del término de búsqueda
-    const filteredDogs = allDogs.filter(dog =>
-      dog.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setDogs(filteredDogs);
-    setPage(1); // Reinicia la página a 1 después de filtrar
-  }, [allDogs, searchTerm]);
 
   const paginate = pageNumber => {
     setPage(pageNumber);
   };
 
+
+  const handlerFiltCreated = (event) => {
+    dispatch(filterCreated(event.target.value))
+    setPage(1)
+  }
+
+  const handlerSort = (event) => {
+    dispatch(ordeByName(event.target.value))
+    setPage(1)
+  }
+
+  const handlerCleanFilters = (event) => {
+    event.preventDefault()
+    window.location.reload() 
+  }
+
   return (
     <div>
-      <div>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleChange}
-          placeholder="Buscar por nombre"
-        />
-      </div>
+      <select className={style.filter}  onChange={handlerSort}>
+        <option value="asc">ORDER A - Z</option>
+        <option value="des">ORDER Z - A</option>
+      </select>
+
+      <select className={style.filter} onChange={handlerFiltCreated} >
+        <option value="created">CREATED</option>
+        <option value="existing">EXISTING</option>              
+      </select>
+
+      <button
+        className={style.filter}
+					type="button"
+					onClick={handlerCleanFilters}
+      > Restore </button>
+
       <div className={style.container}>
         {showDogs.map(d => (
           <Card id={d.id} key={d.id} image={d.image} name={d.name} />
@@ -49,7 +60,7 @@ const CardsContainer = () => {
       </div>
       <Paginated
         showPerPage={showPerPage}
-        pokemons={dogs.length}
+        dogs={allDogs.length}
         paginate={paginate}
         page={page}
       />
@@ -58,3 +69,4 @@ const CardsContainer = () => {
 };
 
 export default CardsContainer;
+
