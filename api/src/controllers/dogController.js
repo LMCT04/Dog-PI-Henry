@@ -101,7 +101,16 @@ const DogByID = async (id, source) => {
     console.log(id)
     console.log(source)
     if(source === 'db'){
-        const Dogs = await Dog.findByPk(id)
+        const Dogs = await Dog.findByPk(id, {
+            include: {
+                model: Temperaments,
+                attributes: ['name'],
+                through: {
+                    attributes: [],
+                }
+            }
+        })
+        console.log(Dogs)
         return Dogs
     }
     if(source==='api') {
