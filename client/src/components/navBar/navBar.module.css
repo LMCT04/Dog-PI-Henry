@@ -1,67 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-.button{
-    background-color: #FADF7F;
-    font-family: 'Roboto Mono', monospace;
-    margin-top: 30px;
-    padding: 10px;
-    border-radius: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-style:hidden;
-    font-weight: bold;
-    cursor: pointer;
-    color: #C0A464;
-    opacity: 0.5;
-    border-style: double;
-    border-color: #C0A464;
-    transition: transform 0.3s ease;
-}
 
-.button:hover{
-    background-color: #795C5F;
+.background{
     font-family: 'Roboto Mono', monospace;
-    /*margin-top: 30px;*/
-    /*padding: 10px;*/
-    /*border-radius: 15px;*/
-    /*padding-left: 20px;*/
-    /*padding-right: 20px;*/
-    font-weight: bold;
-    cursor: pointer;
-    color: #F2E29F;
-    box-shadow: 3px 3px 10px black;
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.navBarContainer{
-    background-color: #F2E29F;
-    border-color: #C0A464;
+    height: 12dvh;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-    padding-bottom: 20px;
-    padding-top: 0px;
+    background: #605856;
     align-items: center;
-    font-family: 'Roboto Mono', monospace;
-    border-style:solid;
 }
 
-.icon {
+.box1{
+    width: 70%;
+    height: 100%;
+    display: flex;
+}
+
+.box2{
+    width: 30%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    position: relative;
-    top: 10px;
-    right: 120px;
 }
 
-.iconImage {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+.imgContainer{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxImg{
+    height: 10.5dvh;
+    aspect-ratio: 1/1;
     border-radius: 50%;
-    transform: scale(1.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
     object-fit: cover;
-    position: absolute;
+
+}
+
+.btnContainer{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn{
+    height: 40%;
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    margin: 0 5%;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background: #FBFCFF;
+    border: 0.5px solid #BDB9BD;
+    color: #605856;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background: #BDB9BD;
+    color: #FBFCFF;
+    transform: scale(1.05);
+    box-shadow: 3px 3px 10px black;
+}
+
+.btn:active{
+    transform: scale(0.95);
 }

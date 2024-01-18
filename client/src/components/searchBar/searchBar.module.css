@@ -1,37 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+.background{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    height: 40%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .input {     
     border: 3px solid #C0A464;
     border-radius: 15px;
-    height: 60%; 
-    margin-top: 6px;
     padding: 7px 30px;
-    box-shadow: 3px 3px 10px black;
     font-family: 'Roboto Mono', monospace;
-    background-color:#F2E29F;
+    background: #FBFCFF;
+    border: 0.5px solid #BDB9BD;
+    height: 55%;
+    outline: none;
 }
 
 ::placeholder {
-    color: #795C5F; 
+    color: #605856; 
     
 }
 
 .button {
-    background-color: #FADF7F;
-    color: #C0A464;
-    border: 3px solid #C0A464;
-    padding: 7px 30px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px black;   
     font-family: 'Roboto Mono', monospace;
-    margin-left: 10px;
+    border-radius: 0.5rem;
+    background: #FBFCFF;
+    border: 0.5px solid #BDB9BD;
+    cursor: pointer;
+    height: 100%;
+    margin: 0 5%;
 }
 
 .button:hover{
-    background-color: #795C5F;
-    border: 3px solid #C0A464;
-    color: #F2E29F;
-    font-family: 'Roboto Mono', monospace;
-    transform: scale(1.1);
-    font-weight: bold;
+    background: #BDB9BD;
+    color: #FBFCFF;
+    transform: scale(1.01);
+    box-shadow: 3px 3px 10px black;
+}
+
+.button:active{
+    transform: scale(0.95);
 }

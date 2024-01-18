@@ -1,12 +1,15 @@
 const axios = require('axios')
 const { Dog, Temperaments } = require('../db')
 
+const IMAGE_URL = 'https://cdn2.thedogapi.com'
+
 
 const cleanArr = (arr) => 
     arr.data.map((dogs) => {
+        const idImagen = dogs.reference_image_id;
         return {
             id: dogs.id,
-            image: dogs.image.url,
+            image: (`${IMAGE_URL}/images/${idImagen}.jpg`),
             name: dogs.name,
             height: dogs.height.metric,
             weight: dogs.weight.metric,
@@ -59,9 +62,10 @@ const searchByName = async (name) => {
     });
 
     const cleanDogs = razaDogs.map((dogs) => {
+        const idImagen = dogs.reference_image_id;
         return {
             id: dogs.id,
-            image: dogs.image.url,
+            image: (`${IMAGE_URL}/images/${idImagen}.jpg`),
             name: dogs.name,
             height: dogs.height.metric,
             weight: dogs.weight.metric,
@@ -71,9 +75,10 @@ const searchByName = async (name) => {
     });
     const razas = await axios.get('https://api.thedogapi.com/v1/breeds')
     const razasOnly = razas.data.map(dogs => {
+        const idImagen = dogs.reference_image_id;
         return {
             id: dogs.id,
-            image: dogs.image.url,
+            image: (`${IMAGE_URL}/images/${idImagen}.jpg`),
             name: dogs.name,
             height: dogs.height.metric,
             weight: dogs.weight.metric,
@@ -116,9 +121,10 @@ const DogByID = async (id, source) => {
     if(source==='api') {
         const url = await axios.get('https://api.thedogapi.com/v1/breeds')
         const dog = url.data.find((d) => d.id == id)
+        const idImagen = dog.reference_image_id;
         const cleanArr1 = {
             id: dog.id,
-            image: dog.image.url,
+            image: (`${IMAGE_URL}/images/${idImagen}.jpg`),
             name: dog.name,
             height: dog.height.metric,
             weight: dog.weight.metric,

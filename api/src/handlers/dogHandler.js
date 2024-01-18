@@ -8,6 +8,7 @@ const {
 
 const get_AllDogs_Handler = async (req, res) => {
     const { name } = req.query
+    console.log(getAllDogs());
     try{
         const result = 
             name

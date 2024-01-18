@@ -5,24 +5,26 @@ import SearchBar from '../searchBar/searchBar'
 
 
 const NavBar = () => {
-    return(
-        <div className={style.navBarContainer} >
-            <Link to='/' className={style.icon}>
-                <img src={iconImage} alt="Icono" className={style.iconImage} ></img>
-            </Link>
-            <Link to='/home'>
-                <div className={style.buttonContainer} >
-                    <button className={style.button} > HOME </button>
+    return (
+        <>
+            <div className={style.background}>
+                <div className={style.box1}>
+                    <div className={style.imgContainer}>
+                        <Link to='/'  className={style.boxImg}>
+                            <img src={iconImage} alt="icon" className={style.img}  />
+                        </Link>
+                    </div>
+                    <div className={style.btnContainer}>
+                        <Link to='/home' className={style.btn}> HOME </Link>
+                        <Link to='/form' className={style.btn}> FORM </Link>
+                    </div>
                 </div>
-            </Link>
-            <Link to='/form'>
-                <div className={style.buttonContainer} >
-                    <button className={style.button} > FORM </button>
+                <div className={style.box2}>
+                    <SearchBar/>
                 </div>
-            </Link>
-            <SearchBar/>
-        </div>
-    )
-}
+            </div>
+        </>
+    );
+};
 
-export default NavBar
+export default NavBar;

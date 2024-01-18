@@ -17,11 +17,11 @@ const SearchBar = () => {
     }
 
     return(
-        <div className={style.SearchBarContainer} >
-            <form onSubmit={handlerSubmit} >
+        <div className={style.background} >
+            <form onSubmit={handlerSubmit} className={style.form} >
                 <input
                     type='text'
-                    placeholder='enter dog...'
+                    placeholder='search dog...'
                     onChange={handlerInputChange}
                     className={style.input}
                 />

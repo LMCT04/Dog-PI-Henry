@@ -1,20 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-
-
-.homeContainer{
-    background-image: url('../../components/images/Fondo_HomePage.jpg');
-    background-size: cover;
-    height: 89.5vh;
-    display: flex;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    /*justify-content: center;*/
-    align-items: center;
-    position: relative;
-    font-family: 'Roboto Mono', monospace;
+.epigraphContainer{
+    background-color: aqua;
 }
 
-.epigraph{
-    font-weight: bold;
-    color: #795C5F;
+.background{
+    display: flex;
+    flex-direction: column;
+}
+.boxtxt{
+    width: 35%;
+    height: 8dvh;
+    margin: 1.5dvh auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(62, 99, 113, 0.5);
+}
+
+
+.p{
+    margin: 0 0;
+    color: #fff;
+    text-shadow: 3px 3px 10px black;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
 }

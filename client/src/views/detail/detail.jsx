@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
+import { useParams } from 'react-router-dom'
 import { clearDetail, getDetailDog } from '../../redux/actions'
 import style from './detail.module.css'
 
@@ -50,7 +50,7 @@ const Detail = () => {
                     </div>
                 </div>
             </div>
-            ) : (<p></p>
+            ) : (<p>hola no hay bnada</p>
             )}
         </div>
     )

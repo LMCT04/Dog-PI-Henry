@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import styles from "./paginated.module.css";
 
 const Paginated = ({ showPerPage, dogs, paginate, page }) => {
-
     useEffect(() => {
         if (page !== 1) {
             paginate(1);
@@ -40,14 +39,14 @@ const Paginated = ({ showPerPage, dogs, paginate, page }) => {
                         onClick={page > 1 ? () => paginate(page - 1) : null}
                         disabled={page === 1 ? true : false}
                     >
-                        Prev
+                        &lt;
                     </button>
 
                     {visiblePages.length > 0 &&
                         visiblePages.map((number) => {
                             return (
                                 <button
-                                    className={styles.prev}
+                                    className={styles.number}
                                     key={number}
                                     onClick={() => paginate(number)}
                                     disabled={page === number ? true : false}
@@ -62,7 +61,7 @@ const Paginated = ({ showPerPage, dogs, paginate, page }) => {
                         onClick={page < total ? () => paginate(page + 1) : null}
                         disabled={page === total ? true : false}
                     >
-                        Next
+                        &gt;
                     </button>
                 </div>
             )}
@@ -71,4 +70,3 @@ const Paginated = ({ showPerPage, dogs, paginate, page }) => {
 };
 
 export default Paginated;
-

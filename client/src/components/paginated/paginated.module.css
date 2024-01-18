@@ -1,34 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
-.paginate{
-    margin-top: 0px;
-    margin-bottom: 20px;
+.paginate {
+    width: 100%;
+    height: 9dvh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
-    font-family: 'Roboto Mono', monospace;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .prev {
-    width: 70px;  
-    background:#F2E29F;  
-    color: #C0A464;
-    border: none;
-    border-radius: 15px;
-    padding: 8px 10px;
-    box-shadow: 3px 3px 10px black;
-    font-weight: bold;
-    font-family: 'Roboto Mono', monospace;
-  }
-  
-  .prev:hover {
-    background: #795C5F;
-    color: #F2E29F;
-    transform: translateY(5px);
-    font-family: 'Roboto Mono', monospace;
-  }
-    
+    margin: 2.5dvh 0;
+}
+
+.number{
+    background: #FBFCFF;
+    border: .5px solid #BDB9BD;
+    color: #605856;
+    height: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin: .35%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.number:disabled{
+    background: #605856;
+    color: #FBFCFF;
+}
+
+.number:hover{
+    background: #BDB9BD;
+}
+
+.number:disabled:hover{
+    background: #605856;
+}
+
+.prev {
+    background: #FBFCFF;
+    border: .5px solid #BDB9BD;
+    color: #605856;
+    border-radius: 50%;
+    height: 50%;
+    aspect-ratio: 1/1;
+    margin: .3%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.prev:disabled{
+    background: #605856;
+    color: #FBFCFF;
+}
+
+.prev:hover{
+    background: #BDB9BD;
+}
+
+.prev:disabled:hover{
+    background: #605856;
+}
