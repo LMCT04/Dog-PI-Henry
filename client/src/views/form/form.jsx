@@ -62,111 +62,167 @@ const Form = () => {
         console.log(form);
         axios
             .post("http://localhost:3001/dog", form)
-            .then((res) => alert(res))
-            .catch((err) => alert(err));
+            .then((res) => {
+                console.log(res);
+                alert("Perro creado exitosamente");
+            })
+            .catch((err) => {
+                console.error(err);
+                alert("Error al crear el Perro");
+            });
     };
 
     return (
-        <div className={style.formContainer} onSubmit={submitHandler}>
-            <form className={style.container}>
-                <div className={style.contentContainer}>
-                    <label>Breed:</label>
-                    <input
-                        className={style.input}
-                        type="text"
-                        value={form.name}
-                        onChange={changeHandler}
-                        name="name"
-                    />
+        <>
+            <div className={style.background}>
+                <div className={style.boxTitle}>
+                    <h1 className={style.h1}>
+                        COMPLETE THE FORM AND CREATE A DOG
+                    </h1>
                 </div>
-                {errors.name && (
-                    <span className={style.span}>{errors.name}</span>
-                )}
-                <div className={style.contentContainer}>
-                    <label>Image:</label>
-                    <input
-                        className={style.input}
-                        type="text"
-                        value={form.image}
-                        onChange={changeHandler}
-                        name="image"
-                    />
-                </div>
-                {errors.image && (
-                    <span className={style.span}>{errors.image}</span>
-                )}
-                <div className={style.contentContainer}>
-                    <label>Height:</label>
-                    <input
-                        className={style.input}
-                        type="text"
-                        value={form.height}
-                        onChange={changeHandler}
-                        name="height"
-                    />
-                </div>
-                {errors.height && (
-                    <span className={style.span}>{errors.height}</span>
-                )}
-                <div className={style.contentContainer}>
-                    <label>Weight:</label>
-                    <input
-                        className={style.input}
-                        type="text"
-                        value={form.weight}
-                        onChange={changeHandler}
-                        name="weight"
-                    />
-                </div>
-                {errors.weight && (
-                    <span className={style.span}>{errors.weight}</span>
-                )}
-                <div className={style.contentContainer}>
-                    <label>Life Span:</label>
-                    <input
-                        className={style.input}
-                        type="text"
-                        value={form.lifeSpan}
-                        onChange={changeHandler}
-                        name="lifeSpan"
-                    />
-                </div>
-                {errors.lifeSpan && (
-                    <span className={style.span}>{errors.lifeSpan}</span>
-                )}
+                <div className={style.boxForm}>
+                    <div className={style.formBox} onSubmit={submitHandler}>
+                        <form className={style.form}>
+                            <div className={style.box1}>
+                                <div className={style.bodyForm}>
+                                    <div className={style.inpCont}>
+                                        <label className={style.lb}>
+                                            Breed:
+                                        </label>
 
-                <div className={style.temperament}>
-                    <label
-                        className={style.labelTemperaments}
-                        htmlFor="temperament"
-                    >
-                        Temperaments:
-                    </label>
-                    <div className={style.boxTemperaments}>
-                        {allTemperaments.map((temperament) => (
-                            <div key={temperament}>
-                                <input
-                                    type="checkbox"
-                                    value={temperament}
-                                    onChange={changeHandler}
-                                    checked={form.temperaments.includes(
-                                        temperament
-                                    )}
-                                />
-                                <label className={style.itemTemperament}>
-                                    {temperament}
-                                </label>
+                                        <input
+                                            className={style.input}
+                                            type="text"
+                                            value={form.name}
+                                            onChange={changeHandler}
+                                            name="name"
+                                        />
+                                        {errors.name && (
+                                            <span className={style.span}>
+                                                {errors.name}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <div className={style.inpCont}>
+                                        <label className={style.lb}>
+                                            Image:
+                                        </label>
+
+                                        <input
+                                            className={style.input}
+                                            type="text"
+                                            value={form.image}
+                                            onChange={changeHandler}
+                                            name="image"
+                                        />
+                                        {errors.image && (
+                                            <span className={style.span}>
+                                                {errors.image}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <div className={style.inpCont}>
+                                        <label className={style.lb}>
+                                            Height:
+                                        </label>
+
+                                        <input
+                                            className={style.input}
+                                            type="text"
+                                            value={form.height}
+                                            onChange={changeHandler}
+                                            name="height"
+                                        />
+                                        {errors.height && (
+                                            <span className={style.span}>
+                                                {errors.height}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <div className={style.inpCont}>
+                                        <label className={style.lb}>
+                                            Weight:
+                                        </label>
+
+                                        <input
+                                            className={style.input}
+                                            type="text"
+                                            value={form.weight}
+                                            onChange={changeHandler}
+                                            name="weight"
+                                        />
+                                        {errors.weight && (
+                                            <span className={style.span}>
+                                                {errors.weight}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <div className={style.inpCont}>
+                                        <label className={style.lb}>
+                                            Life Span:
+                                        </label>
+
+                                        <input
+                                            className={style.input}
+                                            type="text"
+                                            value={form.lifeSpan}
+                                            onChange={changeHandler}
+                                            name="lifeSpan"
+                                        />
+                                        {errors.lifeSpan && (
+                                            <span className={style.span}>
+                                                {errors.lifeSpan}
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className={style.btnBox}>
+                                    <button className={style.btn} type="submit">
+                                        CREATE
+                                    </button>
+                                </div>
                             </div>
-                        ))}
+                            <div className={style.content3}>
+                                <div className={style.scrollBg}>
+                                    <div className={style.titleTemps}>
+                                        <label
+                                            className={style.h1b}
+                                            htmlFor="temperament"
+                                        >
+                                            SELECT THE TEMPERAMENTS
+                                        </label>
+                                    </div>
+                                    <div className={style.scrollBox}>
+                                        {allTemperaments.map((temperament) => (
+                                            <div
+                                                key={temperament}
+                                                className={style.temps}
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    value={temperament}
+                                                    onChange={changeHandler}
+                                                    checked={form.temperaments.includes(
+                                                        temperament
+                                                    )}
+                                                />
+                                                <label
+                                                    className={
+                                                        style.itemTemperament
+                                                    }
+                                                >
+                                                    {temperament}
+                                                </label>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div className={style.buttonContainer}>
-                    <button className={style.button} type="submit">
-                        CREATE
-                    </button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </>
     );
 };
 

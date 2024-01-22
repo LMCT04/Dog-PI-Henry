@@ -1,127 +1,183 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+/*NUEVOS ESTILOS*/
 
-.formContainer{
-    background-image: url('../../components/images/screen-0.webp');
-    background-size: cover;
-    height: 89.5vh;
+.background{
+    width: 100%;
+    height: 88dvh;
     display: flex;
-    background-repeat: no-repeat;
     flex-direction: column;
+}
+
+.boxTitle{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    font-family: 'Roboto Mono', monospace;
-    color: #C0A464;
-    font-size: 15px;
+}
+
+.h1{
+    color: white;
+    text-shadow: 3px 3px 10px black;
+}
+
+.boxForm{
+    width: 100%;
+    height: 88%;
+    display: flex;
     justify-content: center;
 }
 
-.container{
-    border: 5px solid #C0A464;
-    width: 1490px;
-    height: 750px;
-    /*background-image: url('../../components/images/dog-with-glasses-wallpaper.webp');
-    */
-    background-color: #795C5F;
-    background-size: cover;
-    border-radius: 15px;
-    position: absolute;
-    background-repeat: no-repeat;
-    opacity: 0.9;
+.formBox{
+    width: 70%;
+    height: 100%;
 }
 
-.container:hover{
-    box-shadow: 3px 3px 10px black;
+.content3{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3.75%;
 }
 
-.contentContainer{
-    border: 3px solid #C0A464;
-    margin-top: 5px;
-    margin-bottom: 0px;
-    margin-left: 500px;
-    margin-right: 80px;
-    border-radius: 15px;
-    background-color: #795C5F;
-    font-weight: bold;
-    text-align: center;
-    text-indent: 10px;
-    opacity: 0.9;
-    width: 500px;
+.scrollBg{
+    background: #FBFCFF;
+    border: 1px solid #BDB9BD;
+    height: 100%;
+    width: 100%;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.buttonContainer{
-    margin: 10px;
-    text-align: center;
+.titleTemps{
+    background: #e0dde0;
+    width: 70%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.button{
-    background-color: #FADF7F;
-    font-family: 'Roboto Mono', monospace;
-    padding: 10px;
-    border-radius: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #C0A464;
-    border-style: double;
-    border-color: #C0A464;
-    transition: transform 0.3s ease;
+.h1b{
+    color: #795C5F;
+    font-size: 1.3rem;
 }
 
-.button:hover{
-    background-color: #795C5F;
-    border-color: #795C5F;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: bold;
-    cursor: pointer;
-    color: #F2E29F;
-    box-shadow: 3px 3px 10px black;
-    opacity: 1;
-    transform: scale(1.1);
+.scrollBox{
+    width: 70%;
+    height: 70%;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 5%;
+    background: #FBFCFF;
+    border: 1px solid #BDB9BD;
+}
+
+.temps{
+    padding-left: 1rem;
+    margin: 1.8% 0;
+}
+
+.temps:hover{
+    background: #795C5F;
+}
+
+
+.form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bodyForm{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inpCont{
+    width: 70%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5%;
+    align-items: center;
 }
 
 .input{
-    background-color: #C0A464;
-    border-style: none;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    color: #F2E29F;
-    width: 300px;
+    width: 100%;
+    height: 40%;
+    border-radius: 2rem;
+    padding-left: 1rem;
+    border: 1px solid #795C5F;
+    outline: none;
+    color: #795C5F;
+}
+
+.lb{
+    width: 100%;
 }
 
 .span{
-    margin-left: 525px;
-    background-color: red;
-    font-size: 10px;
-    border: 2px solid #C0A464;
-    color: #F2E29F;
+    width: 100%;
+    text-align: end;
+    color: brown;
 }
 
-.temperament{
-    width: 80%;
+.btnBox{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
 }
 
-.labelTemperaments{
-    font-size: 20px;
-	font-family: 'Roboto Mono', monospace;
-	font-weight: 500;
-	color: #C0A464;
-	margin-left: 50%;
-    
+.btn{
+    width: 20%;
+    height: 55%;
+    border-radius: 20px;
+    border: none;
+    font-size: 1rem;
+    background: #795C5F;
+    color: #FBFCFF;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-
-.boxTemperaments {
-	display: grid;
-    grid-template-columns: repeat(8,1fr);
-	width: 1500px;
-	height: 400px;;
+.btn:hover{
+    background: #BDB9BD;
+    color: #795C5F;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 10px black;
 }
 
-.itemTemperament{
-    font-size: 15px;
-    color: black;
-    margin-top: 10px;
+.btn:active{
+    transform: scale(0.95);
+    background-color: #969296;
 }
 
+.box1{
+    width: 50%;
+    height: 100%;
+    background: #FBFCFF;
+    border: 1px solid #BDB9BD;
+    border-radius: 10%;
+    margin: 0 3.75%;
+}
+
+.box2{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
