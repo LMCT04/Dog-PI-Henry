@@ -11,7 +11,7 @@ export const FILTER_CREATED = 'FILTER_CREATED'
 export const ORDER_BY_NAME = 'ORDER_BY_NAME'
 export const FILTER_TEMPERAMENT = 'FILTER_TEMPERAMENT'
 
-const URL = 'http://localhost:3001'
+const URL = 'https://backend-pi-dogs-i10d.onrender.com'
 //------------------------------------------------------------
 export const getDog = () => {
     return async function (dispatch) {

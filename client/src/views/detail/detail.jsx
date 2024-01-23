@@ -26,7 +26,7 @@ const Detail = () => {
                         <>
                             <div className={style.box}>
                                 <div className={style.boxImg}>
-                                    <img src={dog.image} alt="image"/>
+                                    <img src={dog.image} alt="dog"/>
                                 </div>
                                 <div className={style.boxDetail}>
                                     <div className={style.boxInfo}>
