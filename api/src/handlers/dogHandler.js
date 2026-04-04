@@ -46,6 +46,7 @@ const post_Dogs_Handler = async (req, res) => {
     }
 }
 
+console.log("hola mundo");
 
 module.exports = {
     get_AllDogs_Handler,
